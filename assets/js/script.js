@@ -1,7 +1,6 @@
 //Width & Heigth
 const width = window.innerWidth
 const height = window.innerHeight
-console.log(width,height)
 let btn = window.document.getElementById('btn')
 
 //Canvas
@@ -24,7 +23,6 @@ if(width < height){
 //Canvas Width & Height
 const width_center = tela.canvas.width / 2
 const height_center = tela.canvas.height / 2 - 10/2
-console.log(tela.canvas.width,tela.canvas.height)
 
 //Key
 document.onkeydown = get_key
@@ -53,8 +51,6 @@ function verif_key(key){
     }
 }
 
-
-
 //Update Gamepad
 function update_gamepad(){
     let chekbox = window.document.getElementById('hide_gamepad_checkbox')
@@ -67,7 +63,6 @@ function update_gamepad(){
 
 
 //Variáveis Game
-
 let game = false
 let snake_position = [width_center,height_center]
 let positions = [[width_center,height_center]]
@@ -75,28 +70,24 @@ let food = [null,null]
 let get_food = false
 let score = 0
 
-
-
 //Games musics
-const music_game = new Audio('assets/game.mp3')
+const music_game = new Audio('assets/audios/game.mp3')
 function music() {
     music_game.play()
     music_game.loop = true
 }
 
-const audio_food = new Audio('assets/food.mp3')
+const audio_food = new Audio('assets/audios/food.mp3')
 function music_food(){
     audio_food.play()
     audio_food.loop = false
 }
 
-const audio_end = new Audio('assets/end.mp3')
+const audio_end = new Audio('assets/audios/end.mp3')
 function music_end(){
     audio_end.play()
     audio_end.loop = false
 }
-
-
 
 //Update Screen
 function standard_screen(){
@@ -104,13 +95,12 @@ function standard_screen(){
     img.onload = function(){
         tela.drawImage(img,0,0,tela.canvas.width,tela.canvas.height)
     }
-    img.src = 'assets/snake.png'
+    img.src = 'assets/images/snake.png'
 }
 
 function limparTela(){
     tela.clearRect(0,0,tela.canvas.width, tela.canvas.height)
 }
-
 
 //Game functions
 function move_snake(){
